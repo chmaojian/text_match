@@ -5,6 +5,10 @@ import os
 path = '.\data_all'
 save_path = '.\save_data'
 files = os.listdir(path)
+
+if not os.path.exists(save_path):
+    os.makedirs(save_path)
+
 save_data.delete(save_path)
 
 for file in files:
