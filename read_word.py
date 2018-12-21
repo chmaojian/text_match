@@ -5,6 +5,7 @@ import os
 path = '.\data_all'
 save_path = '.\save_data'
 files = os.listdir(path)
+save_data.delete(save_path)
 
 for file in files:
     if not os.path.isdir(file):

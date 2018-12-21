@@ -58,8 +58,15 @@ def match(str):
     return feature1, feature2, feature3
 
 
+def delete(path):
+    # path = 'save_data'
+    files = os.listdir(path)
+    for file in files:
+        os.remove(path + '/' + file)
+
+
 def save(f1, f2, f3, path):
-    if os.path.exists(path) == False:
+    if not os.path.exists(path):
         f = xlwt.Workbook(encoding='utf-8')
         row10 = [u'角闪石', u'斜长石', u'石英', u'云母', u'碳酸盐（矿物）', u'暗色矿物', u'黄铁矿', u'黑云母', u'石榴子石', u'绿帘石', u'钠长石', u'酸盐']
         s1 = f.add_sheet(u'矿物', cell_overwrite_ok=True)
